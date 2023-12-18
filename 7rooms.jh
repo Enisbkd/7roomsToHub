@@ -1,0 +1,3 @@
+entity ClientPhoto{
+	clientId String
+}
