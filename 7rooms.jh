@@ -1,0 +1,149 @@
+entity Client {
+	clientId String
+	createdDate String
+	updatedDate String
+	deletedDate String
+	lastname String
+	firstname String
+	gender String
+	salutation String
+	title String
+	birthdayDay Integer
+	birthdayMonth Integer
+	birthdayAltMonth Integer
+	anniversaryDay Integer
+	anniversaryMonth Integer
+	company String
+	email String
+	emailAlt String
+	phoneNumber String
+	phoneNumberlocale String
+	phoneNumberalt String
+	phoneNumberaltlocale String
+	address String
+	address2 String
+	city String
+	postalCode String
+	state String
+	country String
+	isContactPrivate Boolean
+	isOnetimeGuest Boolean
+	status String
+	loyaltyId String
+	loyaltyRank Integer
+	loyaltyTier String
+	marketingOptin Boolean
+	marketingOptints String
+	hasBillingProfile Boolean
+	notes String
+	privateNotes String
+	tags String
+	totalVisits Double
+	totalCovers Double
+	totalCancellations Double
+	totalNoShows Double
+	totalSpend Double
+	totalSpendPerCover Double
+	totalspendPerVisit Double
+	avgRating Double
+	referenceCode String
+	externalUserId String
+	venueGroupId String
+	birthdayAltDay Integer
+	userId String
+	userName String
+	techLineage String
+	techCreatedDate ZonedDateTime
+	techUpdatedDate ZonedDateTime
+	techMapping String
+	techComment String
+}
+
+entity MemberGroup {
+
+}
+
+entity ClientTag {
+	clientId String
+	tag String
+	tagDisplay String
+	group String
+	groupDisplay String
+	color String
+	techLineage String
+	techCreatedDate ZonedDateTime
+ 	techUpdatedDate ZonedDateTime
+	techMapping String
+	techComment String
+}
+entity CustomField {
+	clientId String
+	systemName String
+	displayOrder Integer
+	name String
+	value String
+	techLineage String
+	techCreatedDate ZonedDateTime
+	techUpdatedDate ZonedDateTime
+	techMapping String
+	techComment String
+}
+entity ClientVenueStats {
+	clientId String
+	venueId String
+	avgRating Integer
+	bookedByNames String
+	lastVisitDate String
+	numRatings Integer
+	totalCancellations Integer
+	totalCovers Integer
+	totalNoShows Integer
+	totalSpend Double
+	totalSpendLocal Double
+	totalSpendLocalperCover Double
+	totalSpendLocalPerVisit Double
+	totalSpendperCover Double
+	totalSpendPerVisit Double
+	totalVisit Integer
+	venueMarketingOptin Boolean
+	venueMarketingOptints String
+	techLineage String
+	techCreatedDate ZonedDateTime
+	techUpdatedDate ZonedDateTime
+	techMapping String
+	techComment String
+}
+entity ClientPhoto{
+	clientId String
+	large String
+	largeHeight Integer
+	largeWidth Integer
+	medium String
+	mediumHeight Integer
+	mediumWidth Integer
+	small String
+	smallHeight Integer
+	smallWidth Integer
+	raw String
+	cropx Integer
+	cropy Integer
+	cropHeight Double
+	cropWidth Double
+	techLineage String
+	techCreatedDate ZonedDateTime
+	techUpdatedDate ZonedDateTime
+	techMapping String
+	techComment String
+}
+
+relationship OneToMany {
+  Client to ClientVenueStats
+  Client to CustomField
+  Client to ClientTag
+  Client to Reservation
+  Client to MemberGroup
+}
+
+relationship OneToOne {
+  Client to ClientPhoto
+}
