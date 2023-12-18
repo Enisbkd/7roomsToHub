@@ -1,0 +1,22 @@
+entity ClientPhoto{
+	clientId String
+	large String
+	largeHeight Integer
+	largeWidth Integer
+	medium String
+	mediumHeight Integer
+	mediumWidth Integer
+	small String
+	smallHeight Integer
+	smallWidth Integer
+	raw String
+	cropx Integer
+	cropy Integer
+	cropHeight Double
+	cropWidth Double
+	techLineage String
+	techCreatedDate ZonedDateTime
+	techUpdatedDate ZonedDateTime
+	techMapping String
+	techComment String
+}
